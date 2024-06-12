@@ -1,0 +1,17 @@
+[versions]
+kotlinxCoroutines = "1.7.3"
+
+# Plugin versions
+kotlin = "2.0.0"
+vanniktechMavenPublish = "0.28.0"
+
+[libraries]
+crypto = { group = "com.diglol.crypto", name = "crypto", version = "0.1.5" }
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
+multimult = { group = "io.github.funkatronics", name = "multimult", version = "0.2.3" }
+
+[plugins]
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+publish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktechMavenPublish" }
