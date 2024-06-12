@@ -11,8 +11,8 @@ repositories {
 val artifactId: String by project
 
 kotlin {
+    jvmToolchain(11)
     jvm {
-        jvmToolchain(11)
         withJava()
         testRuns["test"].executionTask.configure {
             useJUnitPlatform()
