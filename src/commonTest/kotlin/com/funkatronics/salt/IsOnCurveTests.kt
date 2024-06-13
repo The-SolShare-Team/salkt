@@ -1,7 +1,6 @@
 package com.funkatronics.salt
 
 import com.funkatronics.encoders.Base58
-import com.solana.salt.TweetNaclFast
 import kotlin.test.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue

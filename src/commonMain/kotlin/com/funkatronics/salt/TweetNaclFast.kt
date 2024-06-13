@@ -1,4 +1,4 @@
-package com.solana.salt
+package com.funkatronics.salt
 
 import kotlin.jvm.JvmOverloads
 
