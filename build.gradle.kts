@@ -12,12 +12,7 @@ val artifactId: String by project
 
 kotlin {
     jvmToolchain(11)
-    jvm {
-        withJava()
-        testRuns["test"].executionTask.configure {
-            useJUnitPlatform()
-        }
-    }
+    jvm()
     listOf(
         iosX64(),
         iosArm64(),
@@ -28,6 +23,10 @@ kotlin {
         it.binaries.framework {
             baseName = artifactId
         }
+    }
+    js {
+        browser()
+        nodejs()
     }
     sourceSets {
         val commonMain by getting
