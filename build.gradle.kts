@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
+
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.publish)
@@ -9,6 +11,7 @@ repositories {
 }
 
 val artifactId: String by project
+val xcf = XCFramework(artifactId)
 
 kotlin {
     jvmToolchain(11)
@@ -22,6 +25,11 @@ kotlin {
     ).forEach {
         it.binaries.framework {
             baseName = artifactId
+
+            // Specify CFBundleIdentifier to uniquely identify the framework
+            binaryOption("bundleId", "com.solanamobile.${artifactId}")
+            xcf.add(this)
+            isStatic = true
         }
     }
     js {
